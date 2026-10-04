@@ -1,0 +1,195 @@
+---
+const links = [
+  {
+    title: "Mi Anti AntiBiblioteca",
+    url: "https://biblioteca-personal-ochljpum3gn6nk4anzhhwj.streamlit.app",
+  },
+];
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Un Vagabundo en la Biblioteca</title>
+    <meta
+      name="description"
+      content="Mis Ideas y Vagos Sueños"
+    />
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📖</text></svg>" />
+
+
+    <style>
+      :global(*) {
+        box-sizing: border-box;
+      }
+
+      :global(html),
+      :global(body) {
+        margin: 0;
+        min-height: 100%;
+      }
+
+      :global(body) {
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+      }
+
+      .page {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        padding: 50px 20px;
+
+        background:
+          linear-gradient(
+            135deg,
+            #39a96b 0%,
+            #477b9f 45%,
+            #7546a8 100%
+          );
+      }
+
+      .container {
+        width: 100%;
+        max-width: 520px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .profile {
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        object-fit: cover;
+
+        border: 4px solid rgba(255, 255, 255, 0.9);
+
+        box-shadow:
+          0 8px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      h1 {
+        margin: 18px 0 6px;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      .description {
+        margin: 0 0 30px;
+        font-size: 0.95rem;
+        opacity: 0.85;
+      }
+
+      .links {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      .link {
+        width: 100%;
+        display: block;
+
+        padding: 16px 20px;
+
+        border-radius: 14px;
+
+        background: rgba(255, 255, 255, 0.92);
+        color: #222;
+
+        text-align: center;
+        text-decoration: none;
+
+        font-size: 1rem;
+        font-weight: 600;
+
+        box-shadow:
+          0 5px 15px rgba(0, 0, 0, 0.12);
+
+        transition:
+          transform 0.2s ease,
+          background 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      .link:hover {
+        transform: translateY(-2px);
+
+        background: white;
+
+        box-shadow:
+          0 8px 20px rgba(0, 0, 0, 0.18);
+      }
+
+      .link:active {
+        transform: translateY(0);
+      }
+
+      footer {
+        margin-top: 35px;
+        font-size: 0.75rem;
+        opacity: 0.6;
+      }
+
+      @media (max-width: 480px) {
+        .page {
+          padding: 35px 18px;
+        }
+
+        .profile {
+          width: 95px;
+          height: 95px;
+        }
+
+        .link {
+          padding: 15px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="page">
+      <div class="container">
+
+        <img
+          class="profile"
+          src="/foto.jpg"
+          alt="Lucas"
+        />
+
+        <h1>Lucas, un lector en <i>sueños</i></h1>
+
+        <p class="description">
+          Mis Ideas y Vagos Sueños
+        </p>
+
+        <div class="links">
+          {
+            links.map((link) => (
+              <a
+                class="link"
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {link.title}
+              </a>
+            ))
+          }
+        </div>
+
+        <footer>
+          Hecho por Lucas, para Lucas.
+        </footer>
+
+      </div>
+    </main>
+  </body>
+</html>
+```
